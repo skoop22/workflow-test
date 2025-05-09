@@ -25,5 +25,6 @@ jobs:
           run: |
             echo "Running test..."
             echo "Test input: ${{ github.event.inputs.test }}"
+            echo "workinkg directory: $(pwd)"
             echo "File list:"
             find .
