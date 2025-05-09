@@ -25,3 +25,5 @@ jobs:
           run: |
             echo "Running test..."
             echo "Test input: ${{ github.event.inputs.test }}"
+            echo "File list:"
+            find .
