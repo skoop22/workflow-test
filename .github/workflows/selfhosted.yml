@@ -1,0 +1,27 @@
+---
+name: Self-hosted CI/CD runner test
+
+on:
+  workflow_dispatch:
+    inputs:
+      test:
+        description: 'Test to run'
+        required: true
+        default: 'test'
+        type: choice
+        options:
+          - test
+          - build
+          - deploy
+
+jobs:
+    init:
+      runs-on: rainbow
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: run test
+          run: |
+            echo "Running test..."
+            echo "Test input: ${{ github.event.inputs.test }}"
